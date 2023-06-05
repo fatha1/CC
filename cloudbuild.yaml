@@ -9,7 +9,8 @@ steps:
 
   # Step 3: Deploy the Docker image to Compute Engine
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args: [
+    entrypoint: gcloud
+    args: 
       'run', 
       'deploy', 
       'symptomed', 
@@ -18,7 +19,7 @@ steps:
       '--platform', 
       'managed', 
       '--region', 
-      'asia-southeast2']
+      'asia-southeast2'
 
     images:
  - 'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA'
