@@ -19,8 +19,8 @@ class Item(BaseModel):
 
 model = BertForSequenceClassification.from_pretrained("./model", from_tf=True)                 # sesuaikan dengan nama folder model yang sudah diupload
 tokenizer = BertTokenizer.from_pretrained("./tokenizer", local_files_only=True)               # sesuaikan dengan nama folder tokenizer yang sudah diupload
-data_rekomendasi = pd.read_csv("./content/Dataset Rekomendasi Hasil Prediksi Merge.csv", sep=';')     # sesuaikan dengan nama file data rekomendasi yang sudah diupload
-pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, top_k = 24)
+data_rekomendasi = pd.read_csv("./data_rekomendasi.csv", sep=';')     # sesuaikan dengan nama file data rekomendasi yang sudah diupload
+pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, top_k = 42)
 
 factory = StopWordRemoverFactory()
 addStopwords = ['saya', 'itu', 'juga']
