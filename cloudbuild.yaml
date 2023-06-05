@@ -8,7 +8,7 @@ steps:
     args: ['push', 'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA']
 
   # Step 3: Deploy the Docker image to Compute Engine
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     args: [
       'run', 
       'deploy', 
