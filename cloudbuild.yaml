@@ -1,0 +1,24 @@
+steps:
+  # Step 1: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA', '.']
+  
+  # Step 2: Push the Docker image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA']
+
+  # Step 3: Deploy the Docker image to Compute Engine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+      'run', 
+      'deploy', 
+      'symptomed', 
+      '--image', 
+      'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA', 
+      '--platform', 
+      'managed', 
+      '--region', 
+      'asia-southeast2']
+
+    images:
+ - 'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA'

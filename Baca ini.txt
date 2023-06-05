@@ -1,0 +1,31 @@
+Set up environment untuk menjalankan program ini, menggunakan perintah ini di terminal :
+conda create -n symptomed python=3.8
+conda activate symptomed
+python -m pip install -r requirements.txt --upgrade
+
+=================================================================================================================
+
+Path lokasi model bert line 18 disesuaikan untuk penempatan modelnya.
+
+Misal path model berada di "/root/model/model.h5", berarti path di line 18 itu disesuaikan menjadi "/root/model/"
+
+Begitu juga dengan lokasi tokenizer pada line 19, misal lokasinya berada di "/root/tokenizer/tokenizer.json",
+berarti path di line 19 disesuaikan menjadi "/root/tokenizer/"
+
+=================================================================================================================
+
+Untuk menetapkan port, menggunakan perintah ini di terminal :
+export PORT=8080
+
+8080 disesuaikan saja dengan port yang ingin digunakan, jika 8080 udah ada yang menggunakan...maka bisa menggunakan
+port yang lain.
+
+=================================================================================================================
+
+export PATH=$PATH:/place/with/the/file
+
+=================================================================================================================
+
+Untuk menjalankan program, menggunakan perintah ini di terminal :
+conda activate symptomed
+python main.py
