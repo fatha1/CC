@@ -11,14 +11,15 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args: 
-      'run', 
-      'deploy', 
-      'symptomed', 
-      '--image', 
-      'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA', 
-      '--platform', 
-      'managed', 
-      '--region', 
+      'run' 
+      'deploy' 
+      'symptomed' 
+      '--image' 
+      'gcr.io/Capstone-symptomed/my-capstone-app:$COMMIT_SHA'
+      '--platform' 
+      'managed' 
+      '--allow-unauthenticated'
+      '--region'
       'asia-southeast2'
 
     images:
