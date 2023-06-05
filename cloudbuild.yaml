@@ -15,6 +15,6 @@
    - '--image'
    - 'gcr.io/$PROJECT_ID/my-capstone:$COMMIT_SHA'
    - '--region'
-   - 'asia-northeast2'
+   - 'asia-southeast2'
  images:
  - 'gcr.io/$PROJECT_ID/my-capstone:$COMMIT_SHA'
